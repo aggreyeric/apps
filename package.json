@@ -1,0 +1,12 @@
+{
+  "name": "maddy-utils",
+  "version": "1.0.0",
+  "description": "Utilities for managing Maddy mail server",
+  "main": "maddy-utils.js",
+  "scripts": {
+    "start": "node maddy-utils.js"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.5"
+  }
+}

@@ -1,0 +1,21 @@
+name: maddymail
+services:
+    maddy:
+        container_name: maddy
+        environment:
+            - MADDY_HOSTNAME=mx.maddy.test
+            - MADDY_DOMAIN=maddy.test
+        volumes:
+            - maddydata:/data
+            - ./maddy/tls:/data/tls
+        ports:
+            - 25:25
+            - 143:143
+            - 465:465
+            - 587:587
+            - 993:993
+        image: foxcpp/maddy:0.7
+volumes:
+    maddydata:
+        external: true
+        name: maddydata
