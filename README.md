@@ -45,21 +45,5 @@ sendEmail({
   subject: 'Test Email',
   text: 'This is a test email from Maddy',
   auth: {
-    user: 'user@maddy.test',
-    pass: 'secure-password'
-  }
-}).then(() => {
-  console.log('Email sent!');
-}).catch(err => {
-  console.error('Failed to send email:', err);
-});
-```
-
-## Configuration Notes
-
-The script assumes:
-1. You have Maddy running in a Docker container named 'maddy'
-2. Your SMTP server is accessible at localhost on port 587
-3. You're using self-signed certificates
-
-You may need to adjust these settings in the `maddy-utils.js` file based on your actual setup.
+    
+    openssl req -x509 -newkey rsa:4096 -keyout maddy/tls/privkey.pem -out maddy/tls/fullchain.pem -days 365 -nodes -subj "/CN=mx.livelearnpro.com"
