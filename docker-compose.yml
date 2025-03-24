@@ -16,6 +16,6 @@ services:
             - 993:993
         image: foxcpp/maddy:0.7
 volumes:
-    maddydata:
-        external: true
-        name: maddydata
+  maddydata:
+    external: true
+    name: maddydata
