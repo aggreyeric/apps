@@ -8,7 +8,7 @@ services:
     volumes:
       - maddydata:/data
       - ./maddy/tls:/data/tls
-      - ./generate_cert.sh:/usr/local/bin/generate_cert.sh  # Mount the script
+      - ./generate_cert.sh:/tmp/generate_cert.sh  # Mount the script as a file
     ports:
       - 25:25
       - 143:143
@@ -17,7 +17,7 @@ services:
       - 993:993
     image: foxcpp/maddy:0.7
     restart: unless-stopped
-    entrypoint: ["/usr/local/bin/generate_cert.sh"] # Execute the script on startup
+    entrypoint: ["/tmp/generate_cert.sh"] # Execute the script on startup
 volumes:
   maddydata:
     external: true
