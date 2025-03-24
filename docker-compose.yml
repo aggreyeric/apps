@@ -7,7 +7,6 @@ services:
             - MADDY_DOMAIN=livelearnpro.com 
         volumes:
             - maddydata:/data
-            - ./maddy/tls:/data/tls
         ports:
             - 25:25
             - 143:143
