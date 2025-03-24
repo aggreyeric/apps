@@ -3,8 +3,8 @@ services:
     maddy:
         container_name: maddy
         environment:
-            - MADDY_HOSTNAME=mx.maddy.test
-            - MADDY_DOMAIN=maddy.test
+            - MADDY_HOSTNAME=mx.livelearnpro.com 
+            - MADDY_DOMAIN=livelearnpro.com 
         volumes:
             - maddydata:/data
             - ./maddy/tls:/data/tls
